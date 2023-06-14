@@ -3,3 +3,6 @@ main: de.kyleonaut.webhookplugin.WebhookPlugin
 version: 1.0
 api-version: 1.13
 author: kyleonaut
+commands:
+  showwebhooks:
+    permission: webhooks.admin

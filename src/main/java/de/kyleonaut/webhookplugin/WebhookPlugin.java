@@ -1,6 +1,7 @@
 package de.kyleonaut.webhookplugin;
 
 import de.kyleonaut.webhookplugin.api.WebhookServerBuilder;
+import de.kyleonaut.webhookplugin.command.ShowWebhooksCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -24,7 +25,9 @@ public class WebhookPlugin extends JavaPlugin {
                     .handle(() -> Bukkit.getLogger().log(Level.INFO, "[Webhooks] A debug message was received."))
                     .register();
         }
+        notFound((request, response) -> 404);
 
+        getCommand("showwebhooks").setExecutor(new ShowWebhooksCommand());
     }
 
     @Override
